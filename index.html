@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Translator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header class="header">
+        <nav>
+            <h1>Language Translator</h1>
+        </nav>
+    </header>
+
+    <div class="container">        
+        <form method="POST">
+        <textarea id="text-box" name="text" placeholder="Enter text to translate" required>{{ request.form['text'] }}</textarea>            
+        <br>
+            <label for="language">Target Language:</label>
+            <select name="language" required>
+                <option value="en">English</option>
+                <option value="am">Amharic</option>
+                <option value="ar">Arabic</option>
+                <option value="hy">Armenian</option>
+                <option value="zh-cn">Chinese</option>
+                <option value="zh-tw">Chinese(traditional)</option>
+                <option value="cs">Czech</option>
+                <option value="et">Estonian</option>
+                <option value="tl">Filipino</option>
+                <option value="fr">French</option>
+                <option value="de">German</option>
+                <option value="el">Greek</option>
+                <option value="gu">Gujarati</option>
+                <option value="haw">Hawaiian</option>
+                <option value="hu">Hungarian</option>
+                <option value="is">Icelandic</option>
+                <option value="id">Indonesian</option>
+                <option value="it">Italian</option>
+                <option value="ga">Irish</option>
+                <option value="jw">Javanese</option>
+                <option value="ja">Japanese</option>
+                <option value="kn">Kannada</option>
+                <option value="ko">Korean</option>
+                <option value="la">Latin</option>
+                <option value="ml">Malayalam</option>
+                <option value="mt">Maltese</option>
+                <option value="mr">Mararthi</option>
+                <option value="fa">Persian</option>
+                <option value="pt">Portuguese</option>
+                <option value="ro">Romanian</option>
+                <option value="ru">Russian</option>
+                <option value="su">Sundanese</option>
+                <option value="sv">Swedish</option>
+                <option value="es">Spanish</option>
+                <option value="th">Thai</option>
+                <option value="tr">Turkish</option>
+                <option value="vi">Vietnamese</option>
+                <!-- Add more languages as needed -->
+            </select>
+            <br>
+            <button type="submit">Translate</button>
+        </form>
+        
+        <br>
+        {% if translated_text %}
+        <div class="translation-item">
+            <h4>Original Text:</h4>
+            <p>{{ request.form['text'] }}</p>
+            <br>
+            <h4>Translated Text:</h4>
+            <p>{{ translated_text }}</p>
+            <!-- Save Translation Button -->
+            <form method="POST">
+                <input type="hidden" name="text" value="{{ request.form['text'] }}">
+                <input type="hidden" name="language" value="{{ request.form['language'] }}">
+                <button type="submit" name="save" class="save-btn">Save Translation</button>
+            </form>
+        </div>
+        {% endif %}
+        
+        <!-- Display Previous Translations  -->
+        <div class="translations" id="translations">
+        <h3>Saved Translations</h3>
+        {% if no_translations_message %}
+            <p>{{ no_translations_message }}</p>
+            {% else %}
+                {% for translation in translations %}
+                <div class="translation-item">
+                    <p><strong>Original:</strong> {{ translation['original_text'] }}</p>
+                    <p><strong>Translated:</strong> {{ translation['translated_text'] }}</p>
+                    <p><strong>Language:</strong> {{ translation['language'] }}</p>
+                    <p><strong>Date:</strong> {{ translation['date'] }}</p>
+                    <!-- Delete Button -->
+                    <a href="{{ url_for('index', delete_id=translation['_id']) }}" class="delete-btn">Delete</a>
+                </div>
+                {% endfor %}
+        {% endif %}
+        </div>
+    </div>
+
+    <div class="footer">
+    <footer>©2024 Copyright: Language Translator</footer>
+    </div>
+</body>
+</html>

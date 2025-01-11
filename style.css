@@ -1,0 +1,246 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 30px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, p {
+    text-align: center;
+    color: #333;
+}
+
+/* Text Box Replacement: Content Editable Div */
+#text-box {
+    width: 100%;
+    min-height: 100px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    overflow-y: auto;  /* Enables scrolling */
+    white-space: pre-wrap; /* Maintains line breaks */
+    max-height: 200px;  /* Sets a limit for height */
+    box-sizing: border-box; /* Ensures consistent sizing */
+    resize: vertical; /* Allows user to resize */
+}
+
+select, button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+select {
+    padding: 10px 20px;
+}
+
+button {
+    background-color: #ffb2cc;
+    border: none;
+    color: black;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ff98bc;
+}
+
+.navbar {
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar h1 {
+    font-size: 24px;
+    margin: 0;
+    font-weight: bold;
+}
+
+.navbar button {
+    background-color: #ffb2cc;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: black;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.navbar button:hover {
+    background-color: #ff98bc;
+}
+
+/* Translation Item Styling */
+.translation-item {
+    background-color: #f7f7f7;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    color: #333;
+    max-width: 550px;
+    margin: 15px auto;
+    transition: background-color 0.3s ease;
+}
+
+.translation-item:hover {
+    background-color: #e0e0e0;
+}
+
+/* Save Button */
+.save-btn {
+    background-color: #ffb2cc;
+    border: none;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.save-btn:hover {
+    background-color: #ff98bc;
+}
+
+/* Delete Button Styling */
+.delete-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 15px;
+    background-color: #ffb2cc;
+    color: rgb(5, 5, 5);
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.delete-btn:hover {
+    background-color: #ff98bc;
+}
+
+/* Previous Translations Styling */
+.translation {
+    margin-top: 40px;
+}
+
+.translations {
+    margin-top: 40px;
+}
+
+.translations h3{
+    color: #333;
+}
+
+.translation-item p {
+    margin: 0;
+    font-size: 18px;
+}
+
+.header {
+    background: linear-gradient(to top, #ffb2cc 0%, #ffb2cc 100%);
+    padding: 15px;
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1{
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.result {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #2d2d2d;
+    color: white;
+    border-radius: 4px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+h2, h3 {
+    margin-top: 0;
+    font-weight: bold;
+}
+
+h4{
+    margin-bottom: 5px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    background-color: #f48fb1;
+    color: rgb(8, 8, 8);
+    font-size: 14px;
+    clear: both;
+    z-index: 1;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsiveness for Mobile and Tablets */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    .navbar h1 {
+        font-size: 20px;
+    }
+
+    .navbar button {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        margin: 10px;
+    }
+
+    .navbar h1 {
+        font-size: 18px;
+    }
+
+    .navbar button {
+        font-size: 12px;
+    }
+}
