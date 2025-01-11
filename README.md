@@ -18,13 +18,9 @@ Python: Version 3.12.8 (this version is required for the 'cgi' module).
 MongoDB: Ensure MongoDB is installed and running on your system.
 
 -----------------------------------------------------------------------------
-📦 Installation
-1. Clone the repository:
-bash -
-git clone https://github.com/MansiPhate/language-translator.git
-cd language-translator  
-  
-2. Run the project:
+📦 Running The Project
+Run the project:
+
 bash -
 flask run  
 
