@@ -73,8 +73,8 @@ def index():
     return render_template('index.html', translated_text=translated_text, translations=translations, no_translations_message=no_translations_message)
 
 
-if __name__ == '__main__':
-    app.run(debug=True)
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', port=3000)
 
 
 # Explanation:
