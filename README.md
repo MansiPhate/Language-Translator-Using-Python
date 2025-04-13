@@ -17,6 +17,13 @@ Key Python Libraries: Flask, googletrans, pymongo, datetime, uuid, bson.
 Python: Version 3.12.8 (this version is required for the 'cgi' module).
 MongoDB: Ensure MongoDB is installed and running on your system.
 
+---
+
+* Imp Note-
+Make sure to have the file structure as -
+
+![Screenshot 2025-04-13 181824](https://github.com/user-attachments/assets/be1d3425-0785-4c24-b8c9-f2c019e4cfc0)
+
 -----------------------------------------------------------------------------
 📦 Running The Project
 
